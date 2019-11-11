@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import javax.validation.Valid;
 
 @Api(description = "Operaciones cliente tribuna 90", tags = "cliente")
-public interface ClienteController {
+public interface AdminController {
 
     @ApiOperation(value = "Registro de cliente", response = adminDto.class, produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
     consumes = MediaType.APPLICATION_JSON_VALUE)

@@ -2,7 +2,7 @@ package com.cancha.admin.web.rest.controller.impl;
 
 import com.cancha.admin.business.AdminBusiness;
 import com.cancha.admin.dto.adminDto;
-import com.cancha.admin.web.rest.controller.ClienteController;
+import com.cancha.admin.web.rest.controller.AdminController;
 import com.cancha.admin.web.rest.controller.model.IngresoRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/cliente")
 @Validated
-public class ClienteControllerImpl implements ClienteController {
+public class AdminControllerImpl implements AdminController {
 
     private AdminBusiness usuarioBusiness;
 
-    public ClienteControllerImpl(AdminBusiness usuarioBusiness) {
+    public AdminControllerImpl(AdminBusiness usuarioBusiness) {
         this.usuarioBusiness = usuarioBusiness;
     }
 
