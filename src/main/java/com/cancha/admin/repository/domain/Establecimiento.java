@@ -1,12 +1,14 @@
 package com.cancha.admin.repository.domain;
 
 
+import com.cancha.admin.repository.domain.Persona;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
@@ -14,7 +16,7 @@ import java.util.Date;
 @Setter
 public class Establecimiento {
     @Id
-    private Integer id;
+    private String id;
     private String nombre;
     private String ubicacion;
     private Date endTime;
@@ -24,8 +26,9 @@ public class Establecimiento {
     private Persona lastModId;
     @DBRef
     private Date lasModUser;
-    private String latitud;
-    private String longitud;
+    private BigDecimal latitud;
+    private BigDecimal longitud;
     private String horaApertura;
     private String horaCierre;
+    private int numeroCanchas;
 }
