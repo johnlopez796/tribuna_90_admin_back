@@ -15,7 +15,7 @@ public class CanchaDto {
     @NotEmpty
     private Integer capacidad;
     @NotEmpty
-    private Integer tipoGrama ;
+    private String tipoGrama ;
     @NotEmpty
     private EstablecimientoDto establecimiento;
     @NotEmpty
