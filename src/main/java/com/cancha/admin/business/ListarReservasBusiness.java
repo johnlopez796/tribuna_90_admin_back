@@ -3,6 +3,7 @@ package com.cancha.admin.business;
 import com.cancha.admin.dto.ListarReservasDto;
 import com.cancha.admin.web.handler.error.RestException;
 import java.util.Date;
+import java.util.List;
 
 public interface ListarReservasBusiness{
 
@@ -12,7 +13,7 @@ public interface ListarReservasBusiness{
      * @param nickName
      * @return
      */
-    ListarReservasDto consultarReservaNickName(String nickName) throws RestException;
+    List<ListarReservasDto> consultarReservaNickName(String nickName) throws RestException;
 
     /**
      *

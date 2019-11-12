@@ -9,17 +9,18 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 
 public interface ListarReservasRepository extends MongoRepository<Reserva,String> {
 
 
-    @Query("{persona: { nombres: ?0}}")
-    Optional<Reserva> findByName(String persona);
+    @Query("{usuario: { nickname: ?0}}")
+    List<Reserva> findByName(String nickname);
     @Query("{fechaReserva: ?0, persona: ?1}")
-    Optional<Reserva> findByFechaAndPersona(Date fechaReserva, Persona persona);
+    List<Reserva> findByFechaAndPersona(Date fechaReserva, Persona persona);
 
-    Optional<Reserva> findByFechaReserva(Date fechaReserva);
+    List<Reserva> findByFechaReserva(Date fechaReserva);
 
 }

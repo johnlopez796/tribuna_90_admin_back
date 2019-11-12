@@ -16,6 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -26,10 +27,17 @@ public class ListarReservasBusinessImpl implements ListarReservasBusiness {
     private ListarReservasService listarReservasService;
     private ListarReservasMapper listarReservasMapper;
 
+    public ListarReservasBusinessImpl(ListarReservasService listarReservasService, ListarReservasMapper listarReservasMapper) {
+        this.listarReservasService = listarReservasService;
+        this.listarReservasMapper = listarReservasMapper;
+    }
 
     @Override
-    public ListarReservasDto consultarReservaNickName(String nickName) throws RestException {
-        return null;
+    public List<ListarReservasDto> consultarReservaNickName(String nickName) throws RestException {
+        List<ListarReservasDto> listarReservasDtos = listarReservasMapper.toListListarReservasDto(
+                listarReservasService.findByNickName(nickName)
+        );
+        return listarReservasDtos;
     }
 
     @Override

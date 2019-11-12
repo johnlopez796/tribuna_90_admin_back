@@ -7,6 +7,7 @@ import com.cancha.admin.service.ListarReservasService;
 import org.springframework.stereotype.Service;
 import java.util.Date;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -24,18 +25,18 @@ public class ListarReservasServiceImpl implements ListarReservasService {
         }
 
         @Override
-        public Optional<Reserva> findByDate(Date fechaReserva){
-            return listarReservasRepository.findByFecha(fechaReserva);
+        public List<Reserva> findByDate(Date fechaReserva){
+            return listarReservasRepository.findByFechaReserva(fechaReserva);
         }
 
         @Override
-        public Optional<Reserva> findByNickName(String nickName){
-            //return listarReservasRepository.findByName(nickName);
-            return null;
+        public List<Reserva> findByNickName(String nickName){
+            return listarReservasRepository.findByName(nickName);
+
         }
 
         @Override
-        public Optional<Reserva> findByDateandNickname(Date fechaReserva,
+        public List<Reserva> findByDateandNickname(Date fechaReserva,
                                                 Persona nickName){
             return listarReservasRepository.findByFechaAndPersona(fechaReserva,nickName);
         }
