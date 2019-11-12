@@ -1,5 +1,6 @@
 package com.cancha.admin.service;
 
+import com.cancha.admin.repository.domain.Persona;
 import com.cancha.admin.repository.domain.Reserva;
 import java.util.Date;
 
@@ -34,7 +35,7 @@ public interface ListarReservasService {
      * @return
      */
     Optional<Reserva> findByDateandNickname(Date fechaReserva,
-                                     String nickName);
+                                     Persona nickName);
 
 
 

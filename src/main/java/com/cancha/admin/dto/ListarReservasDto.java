@@ -11,13 +11,11 @@ import java.util.List;
 
 @Data
 public class ListarReservasDto {
-    private String id;
+    private int idReserva;
     @NotEmpty
     private Date fechaReserva;
     @NotEmpty
-    private Time horaReserva;
+    private UsuarioDto personaReserva ;
     @NotEmpty
-    private int persona ;
-    @NotEmpty
-    private int cancha;
+    private CanchaDto canchaReserva;
 }

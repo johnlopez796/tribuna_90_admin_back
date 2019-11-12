@@ -1,5 +1,7 @@
 package com.cancha.admin.repository;
 
+import com.cancha.admin.dto.UsuarioDto;
+import com.cancha.admin.repository.domain.Persona;
 import com.cancha.admin.repository.domain.Reserva;
 import com.cancha.admin.repository.domain.Usuario;
 import com.cancha.admin.repository.domain.type.TipoDocumento;
@@ -14,9 +16,8 @@ public interface ListarReservasRepository extends MongoRepository<Reserva,String
 
 
     Optional<Reserva> findByName(String persona);
-    @Query("{ 'persona: {fechaReserva': ?0, 'persona': ?1}}")
-    Optional<Reserva> findByFechaAndPersona(Date fechaReserva,
-                                            String persona);
+    @Query("{ 'Reserva: {fechaReserva': ?0, 'persona': ?1}}")
+    Optional<Reserva> findByFechaAndPersona(Date fechaReserva, Persona persona);
     Optional<Reserva> findByFecha(Date fechaReserva);
 
 }

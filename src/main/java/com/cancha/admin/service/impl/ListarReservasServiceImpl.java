@@ -1,6 +1,7 @@
 package com.cancha.admin.service.impl;
 
 import com.cancha.admin.repository.ListarReservasRepository;
+import com.cancha.admin.repository.domain.Persona;
 import com.cancha.admin.repository.domain.Reserva;
 import com.cancha.admin.service.ListarReservasService;
 import org.springframework.stereotype.Service;
@@ -29,12 +30,13 @@ public class ListarReservasServiceImpl implements ListarReservasService {
 
         @Override
         public Optional<Reserva> findByNickName(String nickName){
-            return listarReservasRepository.findByName(nickName);
+            //return listarReservasRepository.findByName(nickName);
+            return null;
         }
 
         @Override
         public Optional<Reserva> findByDateandNickname(Date fechaReserva,
-                                                String nickName){
+                                                Persona nickName){
             return listarReservasRepository.findByFechaAndPersona(fechaReserva,nickName);
         }
 
