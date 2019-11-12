@@ -15,9 +15,11 @@ import java.util.Optional;
 public interface ListarReservasRepository extends MongoRepository<Reserva,String> {
 
 
+    @Query("{persona: { nombres: ?0}}")
     Optional<Reserva> findByName(String persona);
-    //@Query("{ 'Reserva: {fechaReserva': ?0, 'persona': ?1}}")
+    @Query("{fechaReserva: ?0, persona: ?1}")
     Optional<Reserva> findByFechaAndPersona(Date fechaReserva, Persona persona);
-    Optional<Reserva> findByFecha(Date fechaReserva);
+
+    Optional<Reserva> findByFechaReserva(Date fechaReserva);
 
 }
