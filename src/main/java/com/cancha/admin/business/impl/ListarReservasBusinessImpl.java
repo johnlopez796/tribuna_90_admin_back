@@ -6,7 +6,9 @@ import com.cancha.admin.business.ListarReservasBusiness;
 import com.cancha.admin.dto.ListarReservasDto;
 import com.cancha.admin.dto.adminDto;
 import com.cancha.admin.map.AdminMapper;
+import com.cancha.admin.map.ListarReservasMapper;
 import com.cancha.admin.repository.domain.Usuario;
+import com.cancha.admin.service.ListarReservasService;
 import com.cancha.admin.service.UsuarioService;
 import com.cancha.admin.validation.UsuarioValidation;
 import com.cancha.admin.web.handler.error.RestException;
@@ -21,9 +23,8 @@ import java.util.Optional;
  */
 @Service
 public class ListarReservasBusinessImpl implements ListarReservasBusiness {
-    private UsuarioService usuarioService;
-    private UsuarioValidation usuarioValidation;
-    private AdminMapper adminMapper;
+    private ListarReservasService listarReservasService;
+    private ListarReservasMapper listarReservasMapper;
 
 
     @Override
