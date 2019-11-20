@@ -13,18 +13,19 @@ import java.util.List;
 
 @Mapper(componentModel = "spring", config = MapStructConfig.class)
 public abstract class CanchaMapper {
+
     @Mappings(value = {
             @Mapping(target = "id", source = "idCancha"),
             @Mapping(target = "capacidad", source = "capacidad"),
             @Mapping(target = "tipoGrama", source = "tipoGrama"),
-            @Mapping(target = "cancha.establecimiento", source = "establecimiento"),
+            @Mapping(target = "establecimiento", source = "establecimiento"),
             @Mapping(target = "tipoTecho", source = "tipoTecho"),
             @Mapping(target = "createDate", source = "createDate"),
-            @Mapping(target = "cancha.lastModUserId", source = "persona"),
+            @Mapping(target = "lastModUserId", source = "persona"),
             @Mapping(target = "lastModDate", source = "lastModDate"),
-            @Mapping(target = "cancha.tarifa", source = "tarifa")
+            @Mapping(target = "tarifa", source = "tarifa")
     })
-    public abstract Usuario toCanchaDto(CanchaDto canchaDto);
+    public abstract Cancha toCanchaDto(CanchaDto canchaDto);
 
     @Mappings(value = {
             @Mapping(source = "persona.tipoDocumento", target = "tipoDocumento"),
