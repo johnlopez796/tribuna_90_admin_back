@@ -23,5 +23,14 @@ public interface ListarReservasBusiness{
      */
     ListarReservasDto consultarReservasFecha(Date fechaReserva) throws RestException;
 
+    /**
+     *
+     * @param reserva
+     * @return
+     * @throws RestException
+     */
+    ListarReservasDto registarReserva(ListarReservasDto reserva) throws RestException;
+
+
 
 }

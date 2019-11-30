@@ -2,6 +2,7 @@ package com.cancha.admin.web.rest.controller.impl;
 
 import com.cancha.admin.business.CanchaBusiness;
 import com.cancha.admin.dto.CanchaDto;
+import com.cancha.admin.repository.domain.Establecimiento;
 import com.cancha.admin.web.rest.controller.CanchaController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -22,9 +23,14 @@ public class CanchaControllerImpl implements CanchaController {
     }
 
     @GetMapping("/establecimiento/{nombre}")
-    @Override
-    public ResponseEntity<List<CanchaDto>> consultaCanchaByNickName(@PathVariable String nombre) {
+
+    public ResponseEntity<List<CanchaDto>> consultaCanchaByNickName(@PathVariable Establecimiento nombre) {
         return ResponseEntity.ok(canchaBusiness.consultarCanchaEstablecimiento(nombre));
+    }
+
+    @Override
+    public ResponseEntity<List<CanchaDto>> consultaCanchaByNickName(String nombre) {
+        return null;
     }
 }
 

@@ -25,7 +25,7 @@ public abstract class CanchaMapper {
             @Mapping(target = "lastModDate", source = "lastModDate"),
             @Mapping(target = "tarifa", source = "tarifa")
     })
-    public abstract Cancha toCanchaDto(CanchaDto canchaDto);
+    public abstract Cancha toCancha(CanchaDto canchaDto);
 
     @Mappings(value = {
             @Mapping(source = "persona.tipoDocumento", target = "tipoDocumento"),
@@ -49,8 +49,8 @@ public abstract class CanchaMapper {
             @Mapping(source = "cancha.lastModDate", target = "lastModDate"),
             @Mapping(source = "cancha.tarifa", target = "tarifa")
     })
-    public abstract CanchaDto toListarReservasDto(Cancha cancha);
+    public abstract CanchaDto toCanchaDto(Cancha cancha);
 
-    public abstract List<CanchaDto> toListListarReservasDto(List<Cancha> canchaDto);
+    public abstract List<CanchaDto> toListCanchasDto(List<Cancha> cancha);
 
 }

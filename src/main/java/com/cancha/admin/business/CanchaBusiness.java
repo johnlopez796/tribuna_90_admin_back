@@ -12,10 +12,10 @@ public interface CanchaBusiness {
 
     /**
      *
-     * @param nombre
+     * @param establecimiento
      * @return
      */
-    List<CanchaDto> consultarCanchaEstablecimiento(String nombre) throws RestException;
+    List<CanchaDto> consultarCanchaEstablecimiento(Establecimiento establecimiento) throws RestException;
 
     /**
      *
@@ -32,6 +32,15 @@ public interface CanchaBusiness {
      * @throws RestException
      */
     List<CanchaDto> consultarCanchaCapacidad(Integer capacidad) throws RestException;
+
+    /**
+     *
+     * @param cancha
+     * @return
+     * @throws RestException
+     */
+    CanchaDto registarCancha(CanchaDto cancha) throws RestException;
+
 
 
 }

@@ -40,8 +40,8 @@ public abstract class ListarReservasMapper {
             @Mapping(source = "usuario", target = "personaReserva"),
             @Mapping(source = "cancha", target = "canchaReserva")
     })
-    public abstract ListarReservasDto toListarReservasDto(Reserva  reserva);
+    public abstract ListarReservasDto toListarReservasDto(Reserva reserva);
 
-    public abstract List<ListarReservasDto> toListListarReservasDto(List<Reserva> listarReservasDto);
+    public abstract List<ListarReservasDto> toListListarReservasDto(List<Reserva> listarReservas);
 
 }
