@@ -24,6 +24,12 @@ public class ReservaControllerImpl implements ReservaController {
         this.listarReservasBusiness = listarReservasBusiness;
     }
 
+    @PostMapping("/registroReserva")
+    @Override
+    public ResponseEntity<ListarReservasDto> registrarReserva(@RequestBody ListarReservasDto reservaDto) {
+        return ResponseEntity.ok(listarReservasBusiness.registarReserva(reservaDto));
+    }
+
     @GetMapping("/usuario/{nickname}")
     @Override
     public ResponseEntity<List<ListarReservasDto>> consultaReservaByNickName(@PathVariable String nickname) {

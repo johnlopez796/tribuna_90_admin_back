@@ -23,4 +23,12 @@ public interface ReservaController {
     })
     ResponseEntity<List<ListarReservasDto>> consultaReservaByNickName(@PathVariable String nickname);
 
+    @ApiOperation(value = "Registro de canchas", response = ListarReservasDto.class, produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ApiResponses( value = {
+            @ApiResponse(code = 409, response = ApiError.class, message = "La cancha ya existe")
+    })
+    ResponseEntity<ListarReservasDto> registrarReserva(@RequestBody ListarReservasDto canchaDto);
+
+
 }

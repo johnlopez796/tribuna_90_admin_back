@@ -24,5 +24,13 @@ public interface CanchaController {
     })
     ResponseEntity<List<CanchaDto>> consultaCanchaByNickName(@PathVariable String nombre);
 
+
+    @ApiOperation(value = "Registro de canchas", response = CanchaDto.class, produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ApiResponses( value = {
+            @ApiResponse(code = 409, response = ApiError.class, message = "La cancha ya existe")
+    })
+    ResponseEntity<CanchaDto> registrarCancha(@RequestBody CanchaDto canchaDto);
+
 }
 

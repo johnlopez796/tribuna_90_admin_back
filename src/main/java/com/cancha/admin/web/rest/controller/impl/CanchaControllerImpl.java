@@ -32,5 +32,11 @@ public class CanchaControllerImpl implements CanchaController {
     public ResponseEntity<List<CanchaDto>> consultaCanchaByNickName(String nombre) {
         return null;
     }
+
+    @PostMapping("/registroCancha")
+    @Override
+    public ResponseEntity<CanchaDto> registrarCancha(@RequestBody CanchaDto reservaDto) {
+        return ResponseEntity.ok(canchaBusiness.registarCancha(reservaDto));
+    }
 }
 
